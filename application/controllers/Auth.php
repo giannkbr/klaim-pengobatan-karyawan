@@ -39,7 +39,7 @@ class auth extends CI_Controller
                         'role_id' => $user['role_id']
                     ];
                     $this->session->set_userdata($data);
-                    if ($user['role_id'] == 1) {
+                    if ($user['role_id']) {
                         $this->session->set_flashdata('success', 'Selamat datang kembali ' . $user['name']);
                         redirect('dashboard');
                     } else {

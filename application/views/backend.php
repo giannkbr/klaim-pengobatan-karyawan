@@ -38,7 +38,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-wifi"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Social Net </div>
+                <div class="sidebar-brand-text mx-3">Klaim Pengobatan</div>
             </a>
 
             <!-- Divider -->
@@ -49,6 +49,13 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Beranda</span></a>
             </li>
+
+            <li class="nav-item <?= $title == 'Users'  ? 'active' : '' ?>">
+                <a class="nav-link" href="<?= site_url('users') ?>">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Users</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
             <li class="nav-item <?= $title == 'Setting' | $title == 'About'  ? 'active' : '' ?>">
@@ -56,12 +63,9 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Pengaturan</span>
                 </a>
-                <div id="collapseSetting" class="collapse <?= $title == 'Setting' | $title == 'About' | $title == 'Bank'  ? 'show' : '' ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseSetting" class="collapse <?= $title == 'Setting' | $title == 'About'?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item <?= $title == 'Setting'  ? 'active' : '' ?>" href="<?= site_url('setting') ?>">Perusahaan</a>
-                        <a class="collapse-item <?= $title == 'About'  ? 'active' : '' ?>" href="<?= site_url('setting/about') ?>">Tentang Perusahaan</a>
-                        <a class="collapse-item <?= $title == 'Carousel'  ? 'active' : '' ?>" href="<?= site_url('setting/carousel') ?>">Carousel</a>
-                        <a class="collapse-item <?= $title == 'Bank'  ? 'active' : '' ?>" href="<?= site_url('setting/bank') ?>">Rekening Bank</a>
                     </div>
                 </div>
             </li>
