@@ -83,19 +83,17 @@
       <?php if ($this->session->userdata('role_id') == 1) { ?>
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
-      <li class="nav-item <?= $title == 'Setting' | $title == 'About'  ? 'active' : '' ?>">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSetting"
-          aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Pengaturan</span>
-        </a>
-        <div id="collapseSetting" class="collapse <?= $title == 'Setting' | $title == 'About'?>"
-          aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item <?= $title == 'Setting'  ? 'active' : '' ?>"
-              href="<?= site_url('setting') ?>">Perusahaan</a>
-          </div>
-        </div>
+
+      <li class="nav-item <?= $title == 'report'  ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= site_url('report') ?>">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Laporan</span></a>
+      </li>
+
+      <li class="nav-item <?= $title == 'setting'  ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= site_url('setting') ?>">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Pengaturan</span></a>
       </li>
       <?php } ?>
 

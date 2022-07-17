@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Klaim</title>
+    <title>Laporan Klaim <?php if ($tanggal && $tanggal2 !== '') {
+                            ?>
+            Dari Tanggal <?= indo_date($tanggal) ?> Sampai Tanggal <?= indo_date($tanggal2) ?>
+        <?php } ?></title>
     <link rel="stylesheet" href="<?= base_url('assets/') ?>frontend/libraries/bootstrap/css/bootstrap.css">
 </head>
 
@@ -108,11 +111,21 @@
                     <h3><?= $company['company_name'] ?></h3>
                     <br>
                 </div>
+                <div class="col-4 text-right">
+                    <!-- <img src="<?= base_url('assets/images/' . $company['logo']) ?>" alt="logo"> -->
+                </div>
             </div>
             <hr>
+            <div class="title text-center">
+                <h4 style="font-weight: bold;">Laporan Klaim
+
+                    <?php if ($tanggal && $tanggal2 !== '') {
+                    ?> Dari Tanggal <?= indo_date($tanggal) ?> Sampai Tanggal <?= indo_date($tanggal2) ?>
+                    <?php } ?></h4>
+            </div>
             <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <thead>
+                <table class="table table-bordered table-striped w-auto small" style="font-size: 12px;" id="dataTable" width="100%" cellspacing="0">
+                <thead>
                     <tr>
                         <th style="text-align: center; width:15px">No</th>
                         <th style="width:150px">Nama Karyawan</th>
@@ -125,7 +138,7 @@
                 </thead>
                 <tbody>
                     <?php $no = 1;
-                    foreach ($klaim as $r => $data) { ?>
+                    foreach ($report as $r => $data) { ?>
                         <tr>
                             <td style="text-align: center"><?= $no++ ?>.</td>
                             <td style="text-align: center"><?= $data->name ?></td>
@@ -139,9 +152,8 @@
                         </tr>
                     <?php } ?>
                 </tbody>
-            </table>
+                </table>
             </div>
-            <hr>
             <div class="row mt-2" style="font-size: smaller;">
                 <div class="col-4">
                 </div>
@@ -149,7 +161,6 @@
                 </div>
                 <div class="col-4 text-center">
                     Tanggal Cetak : <?= date('d') ?> <?= indo_month(date('m')) ?> <?= date('Y') ?>
-                    <h6 style="margin-top: 60px;"></h6>
                 </div>
             </div>
         </div>
