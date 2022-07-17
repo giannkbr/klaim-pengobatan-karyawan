@@ -6,6 +6,7 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
         is_logged_in();
+        $this->load->model('klaim_m');
     }
 
     public function index()
