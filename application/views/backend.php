@@ -56,7 +56,7 @@
       <?php if ($this->session->userdata('role_id') == 1) { ?>
       <li class="nav-item <?= $title == 'Klaim'  ? 'active' : '' ?>">
         <a class="nav-link" href="<?= site_url('klaim') ?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-fw fa-medkit"></i>
           <span>Klaim</span></a>
       </li>
 
@@ -68,13 +68,13 @@
       <?php } else if($this->session->userdata('role_id') == 4) { ?>
       <li class="nav-item <?= $title == 'Klaim'  ? 'active' : '' ?>">
         <a class="nav-link" href="<?= site_url('klaim/karyawan/' . $user['id']) ?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-fw fa-medkit"></i>
           <span>Klaim</span></a>
       </li>
       <?php } else { ?>
         <li class="nav-item <?= $title == 'Klaim'  ? 'active' : '' ?>">
         <a class="nav-link" href="<?= site_url('klaim') ?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-fw fa-medkit"></i>
           <span>Klaim</span></a>
       </li>
       <?php } ?>
@@ -86,7 +86,7 @@
 
       <li class="nav-item <?= $title == 'report'  ? 'active' : '' ?>">
         <a class="nav-link" href="<?= site_url('report') ?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-fw fa-print"></i>
           <span>Laporan</span></a>
       </li>
 
