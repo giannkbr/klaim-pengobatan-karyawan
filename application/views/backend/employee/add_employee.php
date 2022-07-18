@@ -44,9 +44,9 @@
         </div>
         <select class="custom-select" name="role_id" id="inputGroupSelect01">
           <option selected>Choose...</option>
-          <option value="1">Admin</option>
+          <option value="1">HRD</option>
           <option value="2">Finance</option>
-          <option value="3">HRD</option>
+          <!-- <option value="3">HRD</option> -->
           <option value="4">Karyawan</option>
         </select>
         <?= form_error('role_id', '<small class="text-danger pl-3 ">', '</small>') ?>
