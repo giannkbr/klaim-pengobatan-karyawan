@@ -4,7 +4,7 @@
 <?php $no = 1;
 foreach ($klaim as $r => $data) { ?>
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <?php if ($user['role_id'] == 4 && $user['role_id'] == 1) {?>
+  <?php if ($user['role_id'] == 4 || $user['role_id'] == 1) {?>
   <a href="<?= site_url('klaim/addklaimkaryawan/' . $data->reimbursements_id) ?>"
     class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah
     Data</a>
@@ -70,9 +70,9 @@ foreach ($klaim as $r => $data) { ?>
           <tr style="text-align: center">
             <th style="text-align: center; width:20px">No</th>
             <th>Nama Karyawan</th>
-            <th>Description</th>
+            <th>Diagnosa</th>
             <th>Nominal</th>
-            <th>Tanggal</th>
+            <th>Tanggal Berobat</th>
             <th>Nama Perusahaan</th>
             <th>Bukti</th>
             <th>Status Klaim</th>

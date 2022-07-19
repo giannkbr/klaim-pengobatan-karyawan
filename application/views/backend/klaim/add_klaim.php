@@ -55,7 +55,7 @@
         <?= form_error('nominal', '<small class="text-danger pl-3 ">', '</small>') ?>
       </div>
       <div class="form-group">
-        <label for="address">Tanggal Diagnosa</label>
+        <label for="address">Tanggal Berobat</label>
         <input type="date" id="date" name="date" class="form-control" value="<?= set_value('date') ?>">
         <?= form_error('date', '<small class="text-danger pl-3 ">', '</small>') ?>
       </div>

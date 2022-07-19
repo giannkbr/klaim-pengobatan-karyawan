@@ -116,9 +116,9 @@
                     <tr>
                         <th style="text-align: center; width:15px">No</th>
                         <th style="width:150px">Nama Karyawan</th>
-                        <th style="width:150px">Description</th>
+                        <th style="width:150px">Diagnosa</th>
                         <th style="width:150px">Nominal</th>
-                        <th style="width:150px">Tanggal</th>
+                        <th style="width:150px">Tanggal Berobat</th>
                         <th style="width:150px">Nama Perusahaan</th>
                         <th style="width:150px">Bukti</th>
                     </tr>

@@ -43,7 +43,7 @@
       <?php } ?>
 
       <div class="form-group">
-        <label for="email">Description</label>
+        <label for="email">Diagnosa</label>
         <input type="hidden" name="reimbursements_id" value="<?= $klaim->reimbursements_id ?>" readonly>
         <input type="text" id="description" name="description" class="form-control" value="<?= $klaim->description ?>">
         <?= form_error('description', '<small class="text-danger pl-3 ">', '</small>') ?>
@@ -54,7 +54,7 @@
         <?= form_error('nominal', '<small class="text-danger pl-3 ">', '</small>') ?>
       </div>
       <div class="form-group">
-        <label for="address">Tanggal</label>
+        <label for="address">Tanggal Berobat</label>
         <input type="date" id="date" name="date" class="form-control"
           value="<?php if(!empty($klaim->date)){ echo $klaim->date; } else { echo date("Y-m-d"); } ?>">
         <?= form_error('date', '<small class="text-danger pl-3 ">', '</small>') ?>
