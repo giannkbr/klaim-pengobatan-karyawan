@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 17 Jul 2022 pada 16.04
+-- Waktu pembuatan: 19 Jul 2022 pada 11.31
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -73,7 +73,7 @@ CREATE TABLE `reimbursements` (
 --
 
 INSERT INTO `reimbursements` (`reimbursements_id`, `description`, `nominal`, `date`, `company_name`, `status_id`, `user_id`, `photo`, `date_created`) VALUES
-(7, 'Beli obat', 8000000, '2022-07-22', 'PT Maju Sejahtera', 1, 30, 'bukti-220717-8a5b5588fc.jpg', '0000-00-00 00:00:00');
+(7, 'Beli obat', 8000000, '2022-07-17', 'PT Maju Sejahtera', 1, 30, 'bukti-220717-8a5b5588fc.jpg', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -91,9 +91,9 @@ CREATE TABLE `role_id` (
 --
 
 INSERT INTO `role_id` (`role_id`, `status_name`) VALUES
-(1, 'admin'),
+(1, 'hrd'),
 (2, 'finance'),
-(3, 'hrd'),
+(3, 'admin'),
 (4, 'karyawan');
 
 -- --------------------------------------------------------
@@ -142,7 +142,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `email`, `password`, `name`, `phone`, `address`, `gender`, `image`, `role_id`, `is_active`, `date_created`) VALUES
 (25, 'admin@admin.com', '$2y$10$pKGfQG2etJ5lDW06PZncIOqY94RJTioYG4oM4n0/Up.cUpnX5HkRO', 'Admin', '085157718575', 'asdasd', 'Laki-laki', 'default.jpg', 1, 1, 1658060850),
-(29, 'hrd@admin.com', '$2y$10$LHEKV0NvI4/u4QkF4Ub.PusJo.Xcg8ibOz/OoQ2rlD6O8/c67fF0C', 'Test HRD', '23423432432423', 'Jl. Sunan Kalijaga No.63B, RT.2/RW.1\r\nMelawai, Kec. Kby. Baru,', 'Laki-laki', 'default.jpg', 3, 1, 1658050671),
+(29, 'testadmin@admin.com', '$2y$10$LHEKV0NvI4/u4QkF4Ub.PusJo.Xcg8ibOz/OoQ2rlD6O8/c67fF0C', 'Test Admin', '23423432432423', 'Jl. Sunan Kalijaga No.63B, RT.2/RW.1\r\nMelawai, Kec. Kby. Baru,', 'Laki-laki', 'default.jpg', 3, 1, 1658222143),
 (30, 'karyawan@admin.com', '$2y$10$.J0s0ULscPSM/0xW0d8p4.7QFeCsGwWtP6wz4o9fMVyYuDbPumxVm', 'Test Karyawan', '085157718575', 'Jl. Sunan Kalijaga No.63B, RT.2/RW.1\r\nMelawai, Kec. Kby. Baru,', 'Laki-laki', 'default.jpg', 4, 1, 1658060830),
 (31, 'finance@admin.com', '$2y$10$8u91rLalxsKNMINqQP05COr.kwqGN5HI9lzM41nsbfp.RDG0nOa9u', 'Test Finance', '2332242', 'Jl. Sunan Kalijaga No.63B, RT.2/RW.1\r\nMelawai, Kec. Kby. Baru,', 'Perempuan', 'default.jpg', 2, 1, 1658065796),
 (32, 'norman@admin.com', '$2y$10$gH/jM5aEAqyOxQCfthz88ea.InTkiDY01wJceZ2Dp/GkIyMJmEXc.', 'Norman Ganteng', '085157718575', 'Jl. Sunan Kalijaga No.63B, RT.2/RW.1\r\nMelawai, Kec. Kby. Baru,', 'Laki-laki', 'default.jpg', 4, 1, 1658065900);
