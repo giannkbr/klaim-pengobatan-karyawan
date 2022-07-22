@@ -22,7 +22,11 @@
       </div>
       <div class="form-group">
         <label for="address">Jenis Kelamin</label>
-        <input type="text" id="gender" name="gender" class="form-control" value="<?= set_value('gender') ?>">
+        <!-- <input type="text" id="gender" name="gender" class="form-control"> -->
+        <select name="gender" id="gender" class="form-control">
+          <option value="Laki-laki">Laki - Laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
         <?= form_error('gender', '<small class="text-danger pl-3 ">', '</small>') ?>
       </div>
 
