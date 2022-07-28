@@ -2,7 +2,6 @@
 
 class User_m extends CI_Model
 {
-
     public function get($id = null)
     {
         $this->db->select('*');

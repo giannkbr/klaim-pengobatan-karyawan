@@ -34,7 +34,7 @@ class Klaim extends CI_Controller {
       if ($this->form_validation->run() == false) {
           $data['title'] = 'Add Klaim';
           $data['company'] = $this->db->get('company')->row_array();
-          $data['karyawan'] = $this->db->get('user')->result();
+          $data['karyawan'] = $this->db->get_where('user', ['role_id' => '4'])->result();
           $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
           $this->template->load('backend', 'backend/klaim/add_klaim', $data);
       } else {
@@ -159,12 +159,13 @@ class Klaim extends CI_Controller {
         // $this->form_validation->set_rules('bukti', 'Nama Perusahaan', 'required|trim');
         $this->form_validation->set_message('required', '%s Tidak boleh kosong, Silahkan isi');
         $this->form_validation->set_message('is_unique', '%s Sudah dipakai, Silahkan ganti');
-        $query  = $this->klaim_m->getKlaim($klaim_id);
+        $query  = $this->klaim_m->getUserById($klaim_id);
+        // var_dump($query);
         if ($this->form_validation->run() == false) {
-          $data['klaim'] = $query->row();
+          $data['klaim'] = $query->row_array();
             $data['title'] = 'Add Klaim';
             $data['company'] = $this->db->get('company')->row_array();
-            $data['karyawan'] = $this->db->get('user')->result();
+            $data['karyawan'] =  $data['user'] = $this->db->get_where('user', ['id' => $klaim_id])->result();;
             $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
             $this->template->load('backend', 'backend/klaim/add_klaim', $data);
         } else {
@@ -181,12 +182,12 @@ class Klaim extends CI_Controller {
                   if ($this->db->affected_rows() > 0) {
                       $this->session->set_flashdata('success', 'Data Klaim berhasil disimpan');
                   }
-                  echo "<script>window.location='" . site_url('klaim') . "'; </script>";
+                 echo "<script>window.location='" . base_url('klaim/karyawan/' . $klaim_id) . "'; </script>";
               }
           } else {
               $error = $this->upload->display_errors();
               $this->session->set_flashdata('error', $error);
-              echo "<script>window.location='" . base_url('klaim') . "'; </script>";
+              echo "<script>window.location='" . base_url('klaim/karyawan/' . $klaim_id) . "'; </script>";
           }
         }
     }

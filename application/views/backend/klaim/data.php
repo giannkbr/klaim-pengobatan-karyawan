@@ -1,16 +1,18 @@
 <!-- Page Heading -->
 <!-- bootstrap datepicker -->
 <link rel="stylesheet" href="<?= base_url('assets/backend') ?>/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
-<?php $no = 1;
-foreach ($klaim as $r => $data) { ?>
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <?php if ($user['role_id'] == 4 || $user['role_id'] == 1) {?>
-  <a href="<?= site_url('klaim/addklaimkaryawan/' . $data->reimbursements_id) ?>"
+  <?php if ($user['role_id'] == 4) {?>
+  <a href="<?= site_url('klaim/addklaimkaryawan/' . $user['id'])?>"
+    class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah
+    Data</a>
+  <?php } else if($user['role_id'] == 1){ ?>
+    <a href="<?= site_url('klaim/add/')?>"
     class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah
     Data</a>
   <?php } else { ?>
   <div class="d-sm-flex align-items-center justify-content-between">
-    <?php $this->view('messages') ?>
+  <?php $this->view('messages') ?>
     <div class="card shadow mb-4">
       <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold">Cetak Data Keseluruhan By Tanggal Klaim</h6>
@@ -84,6 +86,8 @@ foreach ($klaim as $r => $data) { ?>
         <tbody>
 
           <tr>
+          <?php $no = 1;
+foreach ($klaim as $r => $data) { ?>
             <td style="text-align: center"><?= $no++ ?>.</td>
             <td><?= $data->name ?></td>
             <td><?= $data->description ?></td>

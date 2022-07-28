@@ -11,8 +11,8 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01">Nama Karyawan</label>
         </div>
-        <select class="custom-select" name="user_id" id="inputGroupSelect01" readonly>
-          <option value="">Choose...</option>
+        <select class="custom-select" name="user_id" id="inputGroupSelect01" disabled>
+          <option selected>Choose...</option>
           <?php
 						foreach ($karyawan as $data)
 						{
@@ -35,7 +35,8 @@
 						foreach ($karyawan as $data)
 						{
 							echo "<option value='$data->id'";
-              echo ">$data->name</option>";
+							echo $klaim->user_id==$data->id?'selected':'';
+                    		echo ">$data->name</option>";
 						}
 						?>
         </select>

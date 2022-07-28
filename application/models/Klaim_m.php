@@ -31,6 +31,18 @@ class Klaim_m extends CI_Model {
       return $query;
   }
 
+  public function getUserById($id = null)
+    {
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('email !=', 'ginginabdulgoni@gmail.com');
+        if ($id != null) {
+            $this->db->where('id', $id);
+        }
+        $query = $this->db->get();
+        return $query;
+    }
+
 
   public function add($post)
   {
